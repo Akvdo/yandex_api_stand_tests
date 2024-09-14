@@ -1,7 +1,7 @@
 # URL_SERVICE хранит базовый URL веб-сервиса, который используется для доступа к API или другим ресурсам.
 # Значение должно быть скопировано из настроек или документации сервиса, к которому предоставляется доступ.
 # Пример значения: "https://api.example.com"
-URL_SERVICE = "https://ac4a2e17-3c42-46d7-a9a4-26e12b87f177.serverhub.praktikum-services.ru"
+URL_SERVICE = "https://0c3d1cb2-e129-4ba3-afec-af3de5b706f9.serverhub.praktikum-services.ru"
 
 # DOC_PATH содержит путь к документации веб-сервиса.
 # Этот путь используется для формирования полного URL пути к документации, добавляя его к базовому URL сервиса.
@@ -18,3 +18,5 @@ USERS_TABLE_PATH = "/api/db/resources/user_model.csv"
 CREATE_USER_PATH = "/api/v1/users/"
 
 PRODUCTS_KITS_PATH = "/api/v1/products/kits/"
+
+MAIN_KITS_PATH = "/api/v1/kits"

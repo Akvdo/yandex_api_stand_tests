@@ -26,8 +26,8 @@ def post_products_kits(products_ids):
 
 #response = get_docs()
 #response = get_logs()
-response = get_users_table()
-#response = post_new_user(data.user_body)
+#response = get_users_table()
+response = post_new_user(data.user_body)
 #response = post_products_kits(data.product_ids)
 
 print(response.status_code)
