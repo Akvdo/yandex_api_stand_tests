@@ -3,7 +3,7 @@ import sender_stand_request
 # Импорт данных запроса из модуля data, в котором определены заголовки и тело запроса
 import data
 
-# Поизитивные проверки
+# Позитивные проверки
 def positive_assert(kit_body):
     new_kit = sender_stand_request.get_kit_body(kit_body)
     new_response = sender_stand_request.post_new_client_kit(new_kit)
