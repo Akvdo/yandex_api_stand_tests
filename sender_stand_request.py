@@ -1,15 +1,10 @@
 import configuration, data, requests
 
-# Определяем функцию get_docs, которая не принимает параметров
-def get_docs():
-    # Выполняем GET-запрос к URL, который складывается из базового URL-адреса сервиса
-    # и пути к документации, заданных в модуле конфигурации
-    # Функция возвращает объект ответа от сервера
-    return requests.get(configuration.URL_SERVICE + configuration.DOC_PATH)
-
+# Определение функции get_logs для проверки журналов сервера, в которой можно указать количество строк в ответе
 def get_logs():
     return requests.get(configuration.URL_SERVICE + configuration.LOG_MAIN_PATH, params={"count":5})
 
+# Определяем функцию get_users_table для проверки, что пользователь успешно создан
 def get_users_table():
     return requests.get(configuration.URL_SERVICE + configuration.USERS_TABLE_PATH)
 
@@ -19,18 +14,26 @@ def post_new_user(body):
                          json=body,
                          headers=data.headers)
 
-def post_products_kits(products_ids):
+def get_kit_body(name):
     return requests.post(configuration.URL_SERVICE + configuration.PRODUCTS_KITS_PATH,
                          json=products_ids,
                          headers=data.headers)
 
-#response = get_docs()
+# Наборы ответов для промежуточных проверок функций
 #response = get_logs()
-#response = get_users_table()
-response = post_new_user(data.user_body)
+#response = post_new_user(data.user_body)
+response = get_users_table()
 #response = post_products_kits(data.product_ids)
 
-print(response.status_code)
-print(response.headers)
-#print(response.json())
+# Наборы для отображения промежуточных результатов функций
+# Только коды ответа для любой функции
+#print(response.status_code)
+
+# Только заголовки ответа для любой функции
+#print(response.headers)
+
+# Для просмотра только токена из ответа при создании нового пользователя
+#print(response.json()["authToken"])
+
+# Для просмотра таблицы созданных пользователей
 print(response.text)

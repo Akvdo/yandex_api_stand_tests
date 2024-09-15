@@ -1,2 +1,5 @@
-﻿main.py
-create_user_test.py
+﻿.pytest/
+venv/
+.idea/
+.pytest_cache/
+__pycache__/
